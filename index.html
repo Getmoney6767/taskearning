@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sing up Job | Maximize Your Earnings</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #2563eb;
+        --primary-dark: #1d4ed8;
+        --secondary: #10b981;
+        --accent: #f59e0b;
+        --accent-pink: #ec4899;
+        --accent-purple: #a855f7;
+        --dark: #1e293b;
+        --light: #f8fafc;
+        --gray: #64748b;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        color: var(--dark);
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+        animation: fadeDown 0.8s ease;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      .logo-circle {
+        width: 40px;
+        height: 40px;
+        background: var(--primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        animation: pulse 2s infinite;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+        padding: 60px 0;
+      }
+
+      .hero-content h1 {
+        font-size: 3.2rem;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        color: var(--dark);
+        animation: fadeUp 1s ease;
+      }
+
+      .hero-content h1 span {
+        background: linear-gradient(45deg, var(--primary), var(--accent-pink));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        position: relative;
+      }
+
+      .hero-content p {
+        font-size: 1.1rem;
+        color: var(--gray);
+        margin-bottom: 30px;
+        line-height: 1.6;
+      }
+
+      .hero-image {
+        position: relative;
+        animation: float 5s ease-in-out infinite;
+      }
+
+      .hero-image img {
+        width: 100%;
+        border-radius: 20px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .hero-stats {
+        display: flex;
+        gap: 30px;
+        margin-top: 30px;
+        animation: fadeIn 1s ease 0.5s both;
+      }
+
+      .stat-item {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .stat-value {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      .stat-label {
+        font-size: 0.9rem;
+        color: var(--gray);
+      }
+
+      .btn {
+        padding: 15px 30px;
+        border-radius: 30px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        border: none;
+        font-size: 1.1rem;
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
+      }
+
+      .btn-primary {
+        background: linear-gradient(
+          45deg,
+          var(--primary),
+          var(--accent-purple)
+        );
+        color: white;
+        box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 25px rgba(37, 99, 235, 0.4);
+      }
+
+      .btn-primary::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: 0.5s;
+      }
+
+      .btn-primary:hover::before {
+        left: 100%;
+      }
+
+      .features {
+        padding: 80px 0;
+        text-align: center;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: var(--dark);
+      }
+
+      .section-subtitle {
+        color: var(--gray);
+        max-width: 600px;
+        margin: 0 auto 50px;
+        line-height: 1.6;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+      }
+
+      .feature-card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 0;
+        background: linear-gradient(
+          to bottom,
+          var(--accent),
+          var(--accent-pink)
+        );
+        transition: height 0.3s;
+      }
+
+      .feature-card:hover::before {
+        height: 100%;
+      }
+
+      .feature-icon {
+        width: 70px;
+        height: 70px;
+        background: rgba(37, 99, 235, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        color: var(--primary);
+        font-size: 24px;
+        transition: all 0.3s;
+      }
+
+      .feature-card:hover .feature-icon {
+        background: linear-gradient(
+          45deg,
+          var(--primary),
+          var(--accent-purple)
+        );
+        color: white;
+        transform: scale(1.1) rotate(5deg);
+      }
+
+      .feature-card h3 {
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+      }
+
+      .feature-card p {
+        color: var(--gray);
+        line-height: 1.6;
+      }
+
+      .cta-section {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--accent-purple) 100%
+        );
+        color: white;
+        padding: 80px 0;
+        text-align: center;
+        border-radius: 20px;
+        margin: 80px 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-section::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 70%
+        );
+        transform: rotate(30deg);
+        animation: shine 8s infinite linear;
+      }
+
+      .cta-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        position: relative;
+      }
+
+      .cta-section p {
+        max-width: 600px;
+        margin: 0 auto 30px;
+        font-size: 1.1rem;
+        opacity: 0.9;
+        position: relative;
+      }
+
+      .btn-light {
+        background: white;
+        color: var(--primary);
+        padding: 15px 40px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        position: relative;
+        z-index: 1;
+      }
+
+      .btn-light:hover {
+        background: rgba(255, 255, 255, 0.9);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .floating-elements {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+      }
+
+      .floating-element {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.2);
+        animation: floatRandom 10s infinite linear;
+      }
+
+      /* Animations */
+      @keyframes fadeDown {
+        0% {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeUp {
+        0% {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
+        }
+        70% {
+          transform: scale(1);
+          box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
+        }
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+        }
+      }
+
+      @keyframes shine {
+        0% {
+          transform: translateX(-100%) rotate(30deg);
+        }
+        100% {
+          transform: translateX(100%) rotate(30deg);
+        }
+      }
+
+      @keyframes floatRandom {
+        0% {
+          transform: translate(0, 0) rotate(0deg);
+        }
+        25% {
+          transform: translate(10px, -15px) rotate(90deg);
+        }
+        50% {
+          transform: translate(20px, 0px) rotate(180deg);
+        }
+        75% {
+          transform: translate(10px, 15px) rotate(270deg);
+        }
+        100% {
+          transform: translate(0, 0) rotate(360deg);
+        }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 992px) {
+        .features-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .hero-stats {
+          justify-content: center;
+        }
+
+        .features-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">
+          <div class="logo-circle">
+            <i class="fas fa-check-double"></i>
+          </div>
+          <span>Sing Up Job</span>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Complete Your Job & <span>Maximize Earnings</span></h1>
+          <p>
+            Join thousands of professionals who are boosting their income with
+            our premium job completion platform. Access high-value opportunities
+            and accelerate your career growth.
+          </p>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-value">97%</div>
+              <div class="stat-label">Job Success</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">4.8/5</div>
+              <div class="stat-label">User Rating</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">24h</div>
+              <div class="stat-label">Avg. Completion</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img
+            src="https://i.ibb.co/q3hP3Cdk/8f3db8e7-a022-4dc6-9585-fdf6ef373c23.jpg"
+            alt="Professional earning success"
+          />
+        </div>
+      </section>
+
+      <section class="features">
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">
+          Our platform is designed to help you complete jobs efficiently and
+          maximize your earning potential
+        </p>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-user-tie"></i>
+            </div>
+            <h3>Create Profile</h3>
+            <p>
+              Build a professional profile showcasing your skills, experience,
+              and portfolio to attract high-paying clients.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <h3>Find Jobs</h3>
+            <p>
+              Browse through curated job opportunities that match your expertise
+              and earning expectations.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-tasks"></i>
+            </div>
+            <h3>Complete Work</h3>
+            <p>
+              Use our streamlined tools to efficiently complete jobs while
+              maintaining the highest quality standards.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Track Earnings</h3>
+            <p>
+              Monitor your income growth with detailed analytics and insights to
+              optimize your earning strategy.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-money-check"></i>
+            </div>
+            <h3>Get Paid</h3>
+            <p>
+              Receive secure, timely payments through multiple methods with full
+              transparency and low fees.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-medal"></i>
+            </div>
+            <h3>Build Reputation</h3>
+            <p>
+              Gain credibility through client reviews and ratings to qualify for
+              even higher-paying opportunities.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <div class="floating-elements">
+          <div
+            class="floating-element"
+            style="top: 20%; left: 10%; animation-delay: 0s"
+          ></div>
+          <div
+            class="floating-element"
+            style="top: 60%; left: 15%; animation-delay: 1s"
+          ></div>
+          <div
+            class="floating-element"
+            style="top: 30%; right: 10%; animation-delay: 2s"
+          ></div>
+          <div
+            class="floating-element"
+            style="bottom: 20%; right: 15%; animation-delay: 3s"
+          ></div>
+          <div
+            class="floating-element"
+            style="bottom: 40%; left: 20%; animation-delay: 4s"
+          ></div>
+        </div>
+        <h2>Ready to Boost Your Earnings?</h2>
+        <p>
+          Join thousands of professionals who are already maximizing their
+          income with JobComplete
+        </p>
+        <a href="#" class="btn btn-light">Complete Your Job Now</a>
+      </section>
+    </div>
+
+    <script>
+      // Enhanced animations with JavaScript
+      document.addEventListener("DOMContentLoaded", function () {
+        const ctaButtons = document.querySelectorAll(".btn");
+
+        ctaButtons.forEach((button) => {
+          button.addEventListener("mouseover", function () {
+            this.style.transform = "scale(1.05)";
+          });
+
+          button.addEventListener("mouseout", function () {
+            this.style.transform = "scale(1)";
+          });
+        });
+
+        // Animate feature cards on scroll
+        const featureCards = document.querySelectorAll(".feature-card");
+        const floatingElements = document.querySelectorAll(".floating-element");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = "translateY(0)";
+              }
+            });
+          },
+          {
+            threshold: 0.1,
+          }
+        );
+
+        featureCards.forEach((card) => {
+          card.style.opacity = 0;
+          card.style.transform = "translateY(50px)";
+          card.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+          observer.observe(card);
+        });
+
+        // Add random animation to floating elements
+        floatingElements.forEach((el) => {
+          const size = Math.random() * 20 + 10;
+          const delay = Math.random() * 5;
+
+          el.style.width = `${size}px`;
+          el.style.height = `${size}px`;
+          el.style.animationDelay = `${delay}s`;
+
+          // Random colors for floating elements
+          const colors = [
+            "rgba(255, 255, 255, 0.3)",
+            "rgba(168, 85, 247, 0.3)",
+            "rgba(236, 72, 153, 0.3)",
+            "rgba(16, 185, 129, 0.3)",
+          ];
+
+          el.style.background =
+            colors[Math.floor(Math.random() * colors.length)];
+        });
+      });
+    </script>
+  </body>
+</html>
